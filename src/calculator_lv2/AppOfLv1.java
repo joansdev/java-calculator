@@ -2,10 +2,11 @@ package calculator_lv2;
 
 import java.util.Scanner;
 
-public class AppOfLv1 {
+public class AppOfLv1 extends Calculator{
     public static void main(String[] args) {
         // 필요 기능 정의
         Scanner sc = new Scanner(System.in);
+        Calculator cal = new Calculator();
 
         while (true) {
             System.out.println("첫 번째 양의 정수를 입력하세요: ");
@@ -20,15 +21,15 @@ public class AppOfLv1 {
 
             switch (option) {
                 case "+":
-                    result = (index + index2);
+                    result = cal.calculator(index,index2,'+');
                     System.out.println("계산 결과: " + result);
                     break;
                 case "-":
-                    result = (index - index2);
+                    result = cal.calculator(index,index2,'-');
                     System.out.println("계산 결과: " + result);
                     break;
                 case "*":
-                    result = (index * index2);
+                    result = cal.calculator(index,index2,'*');
                     System.out.println("계산 결과: " + result);
                     break;
                 case "/":
@@ -36,12 +37,12 @@ public class AppOfLv1 {
                         System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다");
                         continue;
                     } else {
-                        result = (index / index2);
+                        result = cal.calculator(index,index2,'/');
                         System.out.println("계산 결과: " + result);
                     }
                     break;
                 case "%":
-                    result = (index % index2);
+                    result = cal.calculator(index,index2,'%');
                     System.out.println("계산 결과: " + result);
 
                     break;
@@ -49,6 +50,9 @@ public class AppOfLv1 {
                     System.out.println("지원하지 않는 연산기호입니다.");
                     continue;
             }
+
+
+
             System.out.println("exit 입력시 계산 종료 (아무 키 입력시 계속 계산): ");
             String isExit = sc.nextLine();
 

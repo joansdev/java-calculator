@@ -3,11 +3,12 @@ package calculator_lv2;
 import sun.security.mscapi.CPublicKey;
 
 import javax.xml.ws.BindingType;
+import java.util.ArrayList;
 import java.util.Queue;
 
 public class Calculator {
     // 속성
-    private int[] results;
+    private ArrayList<Integer> results = new ArrayList<>();
 
 
     // 기능
@@ -35,6 +36,5 @@ public class Calculator {
         }
         return result;
     }
-
 
 }
