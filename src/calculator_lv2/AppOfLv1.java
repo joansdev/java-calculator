@@ -3,7 +3,7 @@ package calculator_lv2;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AppOfLv1 extends Calculator{
+public class AppOfLv1 extends Calculator {
     public static void main(String[] args) {
         // 필요 기능 정의
         Scanner sc = new Scanner(System.in);
@@ -22,15 +22,15 @@ public class AppOfLv1 extends Calculator{
 
             switch (option) {
                 case "+":
-                    result = cal.calculator(index,index2,'+');
+                    result = cal.calculator(index, index2, '+');
                     System.out.println("계산 결과: " + result);
                     break;
                 case "-":
-                    result = cal.calculator(index,index2,'-');
+                    result = cal.calculator(index, index2, '-');
                     System.out.println("계산 결과: " + result);
                     break;
                 case "*":
-                    result = cal.calculator(index,index2,'*');
+                    result = cal.calculator(index, index2, '*');
                     System.out.println("계산 결과: " + result);
                     break;
                 case "/":
@@ -38,12 +38,12 @@ public class AppOfLv1 extends Calculator{
                         System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다");
                         continue;
                     } else {
-                        result = cal.calculator(index,index2,'/');
+                        result = cal.calculator(index, index2, '/');
                         System.out.println("계산 결과: " + result);
                     }
                     break;
                 case "%":
-                    result = cal.calculator(index,index2,'%');
+                    result = cal.calculator(index, index2, '%');
                     System.out.println("계산 결과: " + result);
 
                     break;
@@ -51,7 +51,6 @@ public class AppOfLv1 extends Calculator{
                     System.out.println("지원하지 않는 연산기호입니다.");
                     continue;
             }
-
 
 
             System.out.println("exit 입력시 계산 종료 (아무 키 입력시 계속 계산): ");
@@ -67,15 +66,16 @@ public class AppOfLv1 extends Calculator{
         ArrayList<Integer> results2 = cal.getResults();
         System.out.println("계산 결과값 목록: " + results2);
 
-        while (true){
+        while (true) {
             System.out.println("계산 결과값 목록을 수정하시겠습니까?");
             System.out.println("- 아무 키 입력시 수정 진행");
             System.out.println("- no 입력시 시스템 종료");
 
             String isDone = sc.nextLine();
 
-            if(isDone.equals("no")){break;}
-            else {
+            if (isDone.equals("no")) {
+                break;
+            } else {
                 System.out.println("수정할 인덱스 번호 입력");
                 int newIndex = sc.nextInt();
 
@@ -85,11 +85,7 @@ public class AppOfLv1 extends Calculator{
 
                 cal.setResults(newIndex, newValue);
                 System.out.println("계산 결과값 목록: " + results2);
-
             }
         }
-
-
-
     }
 }

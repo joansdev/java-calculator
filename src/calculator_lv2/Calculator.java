@@ -1,34 +1,31 @@
 package calculator_lv2;
 
-import sun.security.mscapi.CPublicKey;
-
-import javax.xml.ws.BindingType;
 import java.util.ArrayList;
-import java.util.Queue;
 
 public class Calculator {
+
     // 속성
     private ArrayList<Integer> results = new ArrayList<>();
 
 
     // 기능
-    public int calculator(int index, int index2, char option){
+    public int calculator(int index, int index2, char option) {
         int result = 0;
 
-        switch (option){
-            case'+':
+        switch (option) {
+            case '+':
                 result = (index + index2);
                 break;
-            case'-':
+            case '-':
                 result = (index - index2);
                 break;
-            case'*':
+            case '*':
                 result = (index * index2);
                 break;
-            case'/':
+            case '/':
                 result = (index / index2);
                 break;
-            case'%':
+            case '%':
                 result = (index % index2);
                 break;
             default:
@@ -39,13 +36,12 @@ public class Calculator {
     }
 
     // 게터
-    public ArrayList<Integer> getResults(){
+    public ArrayList<Integer> getResults() {
         return this.results;
     }
 
     // 세터
-    public void setResults(int idx,int setValue){
+    public void setResults(int idx, int setValue) {
         this.results.set(idx, setValue);
     }
-
 }
