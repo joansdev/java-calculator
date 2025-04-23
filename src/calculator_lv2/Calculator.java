@@ -34,7 +34,18 @@ public class Calculator {
             default:
                 System.out.println("지원하지 않는 연산자");
         }
+        results.add(result);
         return result;
+    }
+
+    // 게터
+    public ArrayList<Integer> getResults(){
+        return this.results;
+    }
+
+    // 세터
+    public void setResults(int idx,int setValue){
+        this.results.set(idx, setValue);
     }
 
 }

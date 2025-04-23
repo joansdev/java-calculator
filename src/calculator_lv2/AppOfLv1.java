@@ -1,5 +1,6 @@
 package calculator_lv2;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AppOfLv1 extends Calculator{
@@ -62,5 +63,33 @@ public class AppOfLv1 extends Calculator{
                 break;
             }
         }
+
+        ArrayList<Integer> results2 = cal.getResults();
+        System.out.println("계산 결과값 목록: " + results2);
+
+        while (true){
+            System.out.println("계산 결과값 목록을 수정하시겠습니까?");
+            System.out.println("- 아무 키 입력시 수정 진행");
+            System.out.println("- no 입력시 시스템 종료");
+
+            String isDone = sc.nextLine();
+
+            if(isDone.equals("no")){break;}
+            else {
+                System.out.println("수정할 인덱스 번호 입력");
+                int newIndex = sc.nextInt();
+
+                System.out.println("새로 넣을 값 입력");
+                int newValue = sc.nextInt();
+                sc.nextLine();
+
+                cal.setResults(newIndex, newValue);
+                System.out.println("계산 결과값 목록: " + results2);
+
+            }
+        }
+
+
+
     }
 }
